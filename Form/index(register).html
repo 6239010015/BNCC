@@ -1,0 +1,71 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta Charset ="UTF-8">
+            <script language="javascript">
+                function checkID(id)
+                {
+                if(id.length != 13) return false;
+                for(i=0, sum=0; i < 12; i++)
+                sum += parseFloat(id.charAt(i))*(13-i); if((11-sum%11)%10!=parseFloat(id.charAt(12)))
+                return false; return true;}
+                
+                function checkForm()
+                { if(!checkID(document.form1.txtID.value))
+                alert('รหัสประชาชนไม่ถูกต้อง');
+                else alert('รหัสประชาชนถูกต้อง เชิญผ่านได้');}
+                </script>
+        </head>
+        <body>
+            <form method="form1" action="" name="form1" onsubmit="checkForm(); return false;">
+            <table width="30%" align="center" border="0" >
+              <tr> 
+              <td><h3>แบบฟอร์มสมัครสมาชิกแฟนคลับนายเศรษฐพงศ์</h3></td>
+            </tr> 
+           <tr>
+                <td>ชื่อ :<input type="text" id="username" name="username"  value="Username" required></td>
+           </tr>
+           <tr>
+              <td>นามสกุล :<input type="text" id="surname" name="surname" value="Surname"  required></td>
+         </tr>
+         <tr>
+            <td>ชื่อเล่น :<input type="text" id="nickname" name="nickname" value="Nickname"  required></td>
+       </tr><tr>   
+               <td>อายุ : <input type="number" id="age" name="age" value="19"  min="1" max="100" required>ปี</td>
+           </tr>
+            <tr>     
+               <td><form name="form1" onsubmit="checkForm(); return false;">
+                รหัสประจำตัวประชาชน : <input type="text" name="txtID" />
+                </td>
+              
+           </tr>
+       <tr>
+          <td>รหัสนักเรียนนักศึกษา :<input type="number" id="id" name="id" minlength="10" maxlength="10" required></td>
+     </tr>
+           
+           <tr>
+               <td>E - Mail <input type="email" id="email" name="email" value="@hotmail.com"  minlength="3" maxlength="30" required></td>
+           </tr>
+           <tr>
+               <td>วันเดือนปีเกิด :<input type="date" id="date" name="date" value="2000-01-01" required></td>
+           </tr>
+           <tr>
+              <td>ที่อยู่ : <textarea type="text" id="address" name="address" style="margin: 0px; height: 181px; width: 436px;" required=""></textarea></td>
+         </tr>
+         <tr>
+            <td>สังกัดสาขาวิชา :<select>
+              <option value="COM">คอมพิวเตอร์ธุรกิจ</option>
+              <option value="IT">เทคโนโลยีสารสนเทศ</option>
+              <option value="COM">บัญชี</option>
+              <option value="COM">การตลาด</option>
+              <option value="COM">โลจิสติกส์</option>
+              <option value="COM">โรงแรม</option>
+            </select>
+       </tr>
+           <tr>
+                <td><input type="submit" value="ส่งข้อมูล">
+                <input type="reset" value="คืนค่าเดิม"></td>
+           </tr>
+           </table>
+            </body>
+    </html>
